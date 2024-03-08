@@ -1,37 +1,33 @@
-#include <stdio.h> 
- void getInputAndCalculate() 
+#include<stdio.h>
+int main ()
 {
-       float num1=2, num2=3, result;
-       char operator='+';
-       switch (operator) 
-      {
-           case '+':
-               result = num1 + num2;
-               break;
-           case '-':
-               result = num1 - num2;
-               break;
-           case '*':
-               result = num1 * num2;
-               break;
-           case '/';
-               if (num2 != 0) 
-               {
-                   result = num1 / num2;
-                   printf("Result: %.2f\n", result);
-               } 
-               else 
-              {
-                   printf("Error: Division by zero.\n");
-               }
-               break;
-           default:
-               printf("Error: Invalid operator.\n");
-       }
-   }
-
-   int main()
- {
-       getInputAndCalculate();
-       return 0;
-   }
+  int num1, num2;
+  float result;
+  char ch;
+  printf ("Enter first number = ");
+  scanf ("%d", &num1);
+  printf ("Enter second number = ");
+  scanf ("%d", &num2);
+  printf ("Choose operator to perform operations = ");
+  scanf (" %c", &ch);
+  result = 0;
+  switch (ch)
+    {
+    case '+':
+      result = num1 + num2;
+      break;
+    case '-':
+      result = num1 - num2;
+      break;
+    case '*':
+      result = num1 * num2;
+      break;
+    case '/':
+      result = num1 / num2;
+      break;
+    default:
+      printf ("Invalid operation\n");
+    }
+  printf ("Result: %d %c %d = %f\n", num1, ch, num2, result);
+  return 0;
+}
