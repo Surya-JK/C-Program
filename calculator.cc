@@ -2,7 +2,7 @@
  void getInputAndCalculate() 
 {
        float num1=2, num2=3, result;
-       char operator;
+       char operator='+';
        switch (operator) 
       {
            case '+':
