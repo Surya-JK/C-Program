@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <string.h>
+
+void replaceSubstring(char *original, char *substring, char *replacement) {
+    char result[100]; // Assuming a maximum length for the result string
+    char *ptr = original;
+    while ((ptr = strstr(ptr, substring)) != NULL) {
+        strncpy(result, original, ptr - original);
+        result[ptr - original] = '\0';
+        strcat(result, replacement);
+        strcat(result, ptr + strlen(substring));
+        strcpy(original, result);
+        ptr += strlen(replacement);
+    }
+}
+
+int main() {
+    char str[] = "Hello World, Hello Universe";
+    char oldSubstr[] = "Hello";
+    char newSubstr[] = "Hi";
+
+    printf("Original String: %s\n", str);
+    
+    replaceSubstring(str, oldSubstr, newSubstr);
+
+    printf("Modified String: %s\n", str);
+
+    return 0;
+}
